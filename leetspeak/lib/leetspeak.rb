@@ -1,0 +1,3 @@
+def leetspeak(input)
+
+end
