@@ -15,5 +15,12 @@ describe ScrabbleWord do
         expect(ScrabbleWord.new('q').scrabble).to eq(10)
       end
     end
+
+    context 'given a word' do
+      it('returns the scrabble score for the word') do
+        expect(ScrabbleWord.new('test').scrabble).to eq(4)
+        expect(ScrabbleWord.new('perfect').scrabble).to eq(14)
+      end
+    end
   end
 end

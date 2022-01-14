@@ -15,9 +15,13 @@ class ScrabbleWord
   def scrabble
     return 0 if @word.empty?
 
-    points_array = @letter_values.find do |_points, letters|
-      letters.include?(@word.upcase)
+    score = 0
+    @word.each_char do |char|
+      points_array = @letter_values.find do |_points, letters|
+        letters.include?(char.upcase)
+      end
+      score += points_array[0]
     end
-    points_array[0]
+    score
   end
 end
